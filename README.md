@@ -1,6 +1,8 @@
 # lua-utils
 A collection of useful functions I find myself reusing every project
 
+*WIP*
+
 ## TODO
 
 Rewrite the majority of this in C
@@ -12,7 +14,7 @@ Rewrite the majority of this in C
 ### `slice(t, i1, i2)`
 ### `join(t1, t2)`
 ### `merge(t1, t2)`
-### `rmerge(t1, t2, seen)`
+### `rmerge(t1, t2)`
 ### `indexOf(t, element)`
 ### `removeOccurence(t, element)`
 ### `filter(t, filterFn)`
@@ -23,5 +25,21 @@ Rewrite the majority of this in C
 ### `forEach(t, fn)`
 ### `isArray(t)`
 ### `tlength(t)`
-### `isSubset(t1, t2, ignore, seen)`
+### `isSubset(t1, t2, ignore)`
 ### `shuffle(t, rand)`
+### `dump(t)`
+
+## String utils
+
+### `startsWith(piece)`
+### `endsWith(piece)`
+### `countOccurences(pattern)`
+### `split(delim)`
+### `dimensions()`
+
+## Math utils
+
+### `rotateO(x, y, angle)`
+### `rotate(x, y, ox, oy, angle)`
+### `atan2(y, x)`
+### `distance(x, y, x2, y2)`
