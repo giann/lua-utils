@@ -34,18 +34,6 @@ function math_utils.rotate(x, y, ox, oy, angle)
 end
 
 --
--- atan2
--- @param {number} y
--- @param {number} x
--- @returns {number}
---
-function math_utils.atan2(y, x)
-    return 2 * math.atan(
-        y / (math.sqrt(x*x + y*y) + x)
-    )
-end
-
---
 -- Return distance between two points
 -- @param {number} x
 -- @param {number} y

@@ -401,7 +401,7 @@ function table_utils.dump(t, inc, seen)
 
     s = s .. ("\t"):rep(inc - 1).. "}"
 
-    io.write(s)
+    return s
 end
 
 return table_utils
