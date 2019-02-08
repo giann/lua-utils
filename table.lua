@@ -187,7 +187,11 @@ end
 function table_utils.removeOccurence(t, element)
     for k, v in pairs(t) do
         if v == element then
-            table.remove(t, k)
+            if type(k) == "number" then
+                table.remove(t, k)
+            else
+                t[k] = nil
+            end
         end
     end
 end
@@ -359,49 +363,6 @@ function table_utils.shuffle(t, rand)
         j = rand(i)
         t[i], t[j] = t[j], t[i]
     end
-end
-
---
--- Prints out the content of `t` in a human readable form
--- @param {table} t
---
-function table_utils.dump(t, inc, seen)
-    local s = ""
-    inc = inc or 1
-    seen = seen or {}
-
-    seen[t] = true
-
-    s = s .. "{\n"
-
-    for k, v in pairs(t) do
-        s = s .. ("     "):rep(inc) .. "["
-
-        local typeK = type(k)
-        local typeV = type(v)
-
-        if typeK == "table" and not seen[v] then
-            s = s .. table_utils.dump(k, inc + 1)
-        elseif typeK == "string" then
-            s = s .. "\"" .. k .. "\""
-        else
-            s = s .. tostring(k)
-        end
-
-        s = s .. "]: "
-
-        if typeV == "table" and not seen[v] then
-            s = s .. table_utils.dump(v, inc + 1) .. ",\n"
-        elseif typeV == "string" then
-            s = s .. "\"" .. v .. "\",\n"
-        else
-            s = s .. tostring(v) .. ",\n"
-        end
-    end
-
-    s = s .. ("\t"):rep(inc - 1).. "}"
-
-    return s
 end
 
 return table_utils

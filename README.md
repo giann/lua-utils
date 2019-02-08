@@ -27,7 +27,6 @@ Rewrite the majority of this in C
 ### `tlength(t)`
 ### `isSubset(t1, t2, ignore)`
 ### `shuffle(t, rand)`
-### `dump(t)`
 
 ## String utils
 
@@ -43,3 +42,7 @@ Rewrite the majority of this in C
 ### `rotate(x, y, ox, oy, angle)`
 ### `atan2(y, x)`
 ### `distance(x, y, x2, y2)`
+
+## Debug.utils
+
+### `dump(e)`
